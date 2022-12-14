@@ -14,7 +14,6 @@ const p = Deno.run({
 	stdin: 'piped',
 });
 const encoder = new TextEncoder();
-const decoder = new TextDecoder();
 await p.stdin.write( encoder.encode(
 	Deno.args.includes('-r')?
 		`grim -g "$(slurp -b 00000055 -c 00ffff -w 2)" - > ${filename}.png`
