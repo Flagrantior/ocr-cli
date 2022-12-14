@@ -1,4 +1,4 @@
-const apikey = Deno.env.get('APIKEY');
+const apikey = Deno.env.get('OCRAPIKEY');
 const date = new Date();
 const filename =
 	`${date.getFullYear()
@@ -16,7 +16,9 @@ const p = Deno.run({
 const encoder = new TextEncoder();
 const decoder = new TextDecoder();
 await p.stdin.write( encoder.encode(
-	`grim -g "$(slurp -b 00000055 -c 00ffff -w 2)" - > ${filename}.png`
+	Deno.args.includes('-r')?
+		`grim -g "$(slurp -b 00000055 -c 00ffff -w 2)" - > ${filename}.png`
+		: `grim - > ${filename}.png`
 ));
 await p.stdin.close();
 await p.status();
@@ -35,4 +37,3 @@ fetch('https://api.ocr.space/parse/image', {
 	}).catch(err => {
 		console.error('Error: ', err);
 	});
-
