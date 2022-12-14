@@ -7,7 +7,7 @@
 - [Slurp](https://github.com/emersion/slurp)
 
 ### Запуск
-`$ APIKEY=<api.ocr.space api key> deno --allow-all ocr.js`
+`$ OCRAPIKEY=<api.ocr.space api key> deno --allow-all ocr.js [-r]`
 
 ### Видеодемонстрация
 [![Watch the video](https://img.youtube.com/vi/c--qYfmhjAk/default.jpg)](https://youtu.be/c--qYfmhjAk)
