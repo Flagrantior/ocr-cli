@@ -27,9 +27,7 @@ body.append('file', new File([(await Deno.readFile(`${filename}.png`))], 'image.
 body.set('language', 'eng');
 fetch('https://api.ocr.space/parse/image', {
 	method: 'POST',
-	headers: {
-		'apikey': apikey
-	},
+	headers: {'apikey': apikey},
 	body,
 })
 	.then(res => res.json()).then(text => {
