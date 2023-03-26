@@ -1,4 +1,4 @@
-# YASP
+# ocr-cli
 
 ### Зависимости
 - [Deno](https://github.com/denoland/deno)
